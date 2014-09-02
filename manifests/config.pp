@@ -3,11 +3,11 @@ class ntp::config inherits ntp {
 
   if $keys_enable {
     file { $keys_file:
-      ensure  => file,
-      owner   => 0,
-      group   => ntp,
-      mode    => '0640',
-    }   
+      ensure => file,
+      owner  => 0,
+      group  => ntp,
+      mode   => '0640',
+    }
 
     $directory = dirname($keys_file)
     if $directory =~ /^\/.+\/.+$/ {
