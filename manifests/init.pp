@@ -1,6 +1,7 @@
 class ntp (
   $autoupdate        = $ntp::params::autoupdate,
   $config            = $ntp::params::config,
+  $config_dir        = $ntp::params::config_dir,
   $config_template   = $ntp::params::config_template,
   $disable_monitor   = $ntp::params::disable_monitor,
   $driftfile         = $ntp::params::driftfile,

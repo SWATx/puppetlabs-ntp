@@ -8,17 +8,16 @@ class ntp::config inherits ntp {
       group  => ntp,
       mode   => '0640',
     }
+  }
 
-    $directory = dirname($keys_file)
-    if $directory =~ /^\/.+\/.+$/ {
-      file { $directory:
+  if $config_dir {
+      file { $config_dir:
         ensure  => directory,
         owner   => 0,
-        group   => 0,
+        group   => ntp,
         mode    => '0640',
-        recurse => true,
+        recurse => false,
       }
-    }
   }
 
   file { $config:
